@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CharactersList from './components/CharactersList';
-import CHARACTERS from './constants/data-mock';
+import getCharacters from './services/getCharacters';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    getCharacters().then(setCharacters);
+  }, []);
+
   return (
     <section>
       {
-        CHARACTERS.map((character) => (
-          <CharactersList key={character.name} name={character.name} />
+        characters.map((character) => (
+          <>
+            <CharactersList key={character.name} name={character.name} />
+            <img src={character.image} alt="" />
+          </>
         ))
       }
     </section>
