@@ -1,11 +1,15 @@
 import React from 'react';
 import CharactersList from './components/CharactersList';
+import CHARACTERS from './constants/data-mock';
 
 function App() {
   return (
     <section>
-      <CharactersList name="Rick and Morty" />
-      <CharactersList name="Hasbulla" />
+      {
+        CHARACTERS.map((character) => (
+          <CharactersList key={character.name} name={character.name} />
+        ))
+      }
     </section>
   );
 }
