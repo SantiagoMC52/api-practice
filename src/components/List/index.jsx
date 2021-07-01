@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
+import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import getApiData from '../../redux/actions/actionCreators';
 
-const CharactersList = () => {
+const List = () => {
   const characters = useSelector((store) => store.allData);
   const dispatch = useDispatch();
 
+  const { section } = useParams();
+
   useEffect(() => {
-    if (!characters.length) dispatch(getApiData('character'));
+    if (!characters.length) dispatch(getApiData(section));
   }, []);
 
   return (
@@ -21,9 +24,6 @@ const CharactersList = () => {
                 {character.name}
               </h2>
             </li>
-            <li>
-              <img src={character.image} alt="" />
-            </li>
           </>
         ))
       }
@@ -32,4 +32,4 @@ const CharactersList = () => {
   );
 };
 
-export default CharactersList;
+export default List;
