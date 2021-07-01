@@ -39,7 +39,7 @@ const List = () => {
           <>
             <li key={character.name}>
               <h5>
-                <Link to={`/${'character'}/${character?.id}`}>{character.name}</Link>
+                <Link to={`/${section}/${character?.id}`}>{character.name}</Link>
               </h5>
             </li>
           </>

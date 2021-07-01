@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getApiDetail } from '../../redux/actions/actionCreators';
 
-const Character = () => {
+const Detail = () => {
   const dataDetails = useSelector((store) => store.dataDetails);
   const dispatch = useDispatch();
 
@@ -15,10 +15,12 @@ const Character = () => {
 
   return (
     <>
-      <h1>Character</h1>
+      <h1>Detail</h1>
       <h2>{dataDetails?.name}</h2>
+      <h2>{dataDetails?.type}</h2>
+      <img src={dataDetails?.image} alt="" />
     </>
   );
 };
 
-export default Character;
+export default Detail;
