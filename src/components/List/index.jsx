@@ -1,12 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
+import Pagination from '@material-ui/lab/Pagination';
 import getApiData from '../../redux/actions/actionCreators';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > * + *': {
+      marginTop: theme.spacing(2)
+    }
+  }
+}));
 
 const List = () => {
   const characters = useSelector((store) => store.allData);
   const dispatch = useDispatch();
   const [pagination, setPagination] = useState(1);
+  const classes = useStyles();
 
   const { section } = useParams();
 
@@ -14,12 +25,8 @@ const List = () => {
     if (!characters.length) dispatch(getApiData(section, pagination));
   }, [pagination]);
 
-  function handleNext() {
-    setPagination(pagination + 1);
-    dispatch(getApiData(section, pagination));
-  }
-  function handlePrevious() {
-    setPagination(pagination - 1);
+  function handlePagination(event, value) {
+    setPagination(value);
     dispatch(getApiData(section, pagination));
   }
 
@@ -39,9 +46,8 @@ const List = () => {
       }
       </ul>
 
-      <div>
-        <button type="button" disabled={pagination <= 1} onClick={handlePrevious}>Previous</button>
-        <button type="button" disabled={pagination >= characters.info?.pages} onClick={handleNext}>Next</button>
+      <div className={classes.root}>
+        <Pagination count={characters.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
       </div>
     </section>
   );
