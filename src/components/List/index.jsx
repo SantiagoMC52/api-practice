@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
-import getApiData from '../../redux/actions/actionCreators';
+import { getApiData } from '../../redux/actions/actionCreators';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,7 +39,7 @@ const List = () => {
           <>
             <li key={character.name}>
               <h5>
-                {character.name}
+                <Link to={`/${'character'}/${character?.id}`}>{character.name}</Link>
               </h5>
             </li>
           </>
