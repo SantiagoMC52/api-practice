@@ -1,12 +1,8 @@
 import { combineReducers } from 'redux';
-import charactersReducer from './charactersReducer';
-import locationsRecuder from './locationsReducer';
-import episodesReducer from './episodesReducer';
+import dataReducer from './dataReducer';
 
 const rootReducer = combineReducers({
-  characters: charactersReducer,
-  locations: locationsRecuder,
-  episodes: episodesReducer
+  allData: dataReducer
 });
 
 export default rootReducer;
