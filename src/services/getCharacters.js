@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 export default async function getCharacters() {
   try {
     const response = await fetch('https://rickandmortyapi.com/api/character');
