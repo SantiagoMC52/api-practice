@@ -1,19 +1,20 @@
-/* eslint-disable react/prop-types */
-import React, { useState, useEffect } from 'react';
-import getCharacters from '../../services/getCharacters';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import getApiData from '../../redux/actions/actionCreators';
 
 const CharactersList = () => {
-  const [characters, setCharacters] = useState([]);
+  const characters = useSelector((store) => store.allData);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getCharacters().then(setCharacters);
+    if (!characters.length) dispatch(getApiData('character'));
   }, []);
 
   return (
     <section>
       <ul>
         {
-        characters.map((character) => (
+        characters.results?.map((character) => (
           <>
             <li key={character.name}>
               <h2>
