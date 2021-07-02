@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const List = () => {
-  const characters = useSelector((store) => store.allData);
+  const information = useSelector((store) => store.allData);
   const dispatch = useDispatch();
   const [pagination, setPagination] = useState(1);
   const classes = useStyles();
@@ -23,7 +23,7 @@ const List = () => {
   const { section } = useParams();
 
   useEffect(() => {
-    if (!characters.length) dispatch(getApiData(section, pagination));
+    if (!information.length) dispatch(getApiData(section, pagination));
   }, [pagination]);
 
   function handlePagination(event, value) {
@@ -35,11 +35,11 @@ const List = () => {
     <section>
       <ul>
         {
-        characters.results?.map((character) => (
+        information.results?.map((infoDetail) => (
           <>
-            <li key={character.name}>
+            <li key={infoDetail.name}>
               <h5>
-                <Link to={`/${section}/${character?.id}`}>{character.name}</Link>
+                <Link to={`/${section}/${infoDetail?.id}`}>{infoDetail.name}</Link>
               </h5>
             </li>
           </>
@@ -48,7 +48,7 @@ const List = () => {
       </ul>
 
       <div className={classes.root}>
-        <Pagination count={characters.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
+        <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
       </div>
     </section>
   );
