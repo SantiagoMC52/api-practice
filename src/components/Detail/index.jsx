@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getApiDetail } from '../../redux/actions/actionCreators';
+import Character from './Character';
 
 const Detail = () => {
   const dataDetails = useSelector((store) => store.dataDetails);
@@ -15,10 +16,7 @@ const Detail = () => {
 
   return (
     <>
-      <h1>Detail</h1>
-      <h2>{dataDetails?.name}</h2>
-      <h2>{dataDetails?.type}</h2>
-      <img src={dataDetails?.image} alt="" />
+      <Character data={dataDetails} />
     </>
   );
 };
