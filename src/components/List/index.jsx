@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 import { getApiData } from '../../redux/actions/actionCreators';
 import MainButtons from '../Common/MainButtons';
+import SearchBar from '../SearchBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,9 +34,13 @@ const List = () => {
   }
 
   return (
-    <section>
-      <ul>
-        {
+    <>
+      <header>
+        <SearchBar />
+      </header>
+      <section>
+        <ul>
+          {
         information.results?.map((infoDetail) => (
           <>
             <li key={infoDetail.name}>
@@ -46,15 +51,16 @@ const List = () => {
           </>
         ))
       }
-      </ul>
+        </ul>
 
-      <div className={classes.root}>
-        <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
-      </div>
-      <div>
-        <MainButtons />
-      </div>
-    </section>
+        <div className={classes.root}>
+          <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
+        </div>
+        <div>
+          <MainButtons />
+        </div>
+      </section>
+    </>
   );
 };
 
