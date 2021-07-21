@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Navbar from '../Common/Navbar';
 
 const Dashboard = () => (
-  <div>
-    <Link to={`/${'character'}`}>Characters</Link>
-    <Link to={`/${'location'}`}>Locations</Link>
-    <Link to={`/${'episode'}`}>Episodes</Link>
-  </div>
+  <>
+    <Navbar />
+  </>
 );
 
 export default Dashboard;

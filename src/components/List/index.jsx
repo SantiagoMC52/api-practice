@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Pagination from '@material-ui/lab/Pagination';
 import { getApiData } from '../../redux/actions/actionCreators';
+import MainButtons from '../Common/MainButtons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,6 +50,9 @@ const List = () => {
 
       <div className={classes.root}>
         <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
+      </div>
+      <div>
+        <MainButtons />
       </div>
     </section>
   );
