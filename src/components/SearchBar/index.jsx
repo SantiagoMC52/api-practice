@@ -1,13 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
-const SearchBar = () => (
-  <div>
-    <input
-      placeholder="Search..."
-      required
-    />
-    <button type="button">Search</button>
-  </div>
+const SearchBar = ({ placeholder, handleFilter }) => (
+  <>
+    <div>
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={handleFilter}
+      />
+    </div>
+  </>
 );
 
 export default SearchBar;
