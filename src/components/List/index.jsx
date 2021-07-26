@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
@@ -20,7 +22,7 @@ const List = () => {
   const information = useSelector((store) => store.allData);
   const dispatch = useDispatch();
   const [pagination, setPagination] = useState(1);
-  const [filteredData, setFilteredData] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const classes = useStyles();
   const { section } = useParams();
@@ -32,15 +34,10 @@ const List = () => {
   function handlePagination(event, value) {
     setPagination(value);
     dispatch(getApiData(section, pagination));
-    setFilteredData();
   }
 
   function handleFilter(event) {
-    const searchWord = event.target.value;
-    const newFilter = information.results.filter(
-      (value) => value.name.toLowerCase().includes(searchWord.toLowerCase())
-    );
-    setFilteredData(newFilter);
+    setSearchTerm(event.target.value);
   }
 
   return (
@@ -52,8 +49,14 @@ const List = () => {
         <div>
           <ul>
             {
-            filteredData ? (
-              filteredData?.map((infoDetail) => (
+              information.results?.filter((searched) => {
+                if (searchTerm === '') {
+                  return searched;
+                }
+                if (searched.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                  return searched;
+                }
+              }).map((infoDetail) => (
                 <>
                   <li key={infoDetail.name}>
                     <h5>
@@ -62,18 +65,7 @@ const List = () => {
                   </li>
                 </>
               ))
-            ) : (
-              information.results?.map((infoDetail) => (
-                <>
-                  <li key={infoDetail.name}>
-                    <h5>
-                      <Link to={`/${section}/${infoDetail?.id}`}>{infoDetail.name}</Link>
-                    </h5>
-                  </li>
-                </>
-              ))
-            )
-          }
+            }
           </ul>
         </div>
         <div className={classes.root}>
