@@ -1,0 +1,23 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar{
+    @include flexbox(column, center, center, null);
+
+    a{
+        text-decoration: none;
+        color: $main-blue;
+        font-size: 55px;
+        font-family: $RMFont;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+}
