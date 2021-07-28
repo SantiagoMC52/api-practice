@@ -1,0 +1,63 @@
+@import './../../styles/mixins.scss';
+@import './../../styles/variables.scss';
+
+::placeholder{
+    color: white;
+}
+
+.searchbar{
+    @include flexbox(row, center, null, null);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    &__box{
+        border-radius: 5px;
+        border: none;
+        height: 40px;
+        padding: 10px;
+        width: 300px;
+        background-color: #7C3E1D;
+
+        &:focus{
+            background-color: #92c7c3;
+            outline: none;
+        }
+    }
+}
+
+.list-container{
+    // background-color: red;
+    text-align: center;
+    
+    ul{
+        font-size: 20px;
+        letter-spacing: 2px;
+        li{
+            a{
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+}
+
+#pagination-container{
+    @include flexbox(row, center, null, null);
+    margin-top: 20px;
+}
+
+.buttons-container{
+    @include flexbox(row, space-evenly, null, null);
+    margin-top: 10px;
+    width: 100%;
+
+    &__back, &__home{
+        background-color: #7C3E1D;
+        color: #000;
+        border-radius: 2px;
+        width: 100px;
+        padding: 2px;
+        border: none;
+        cursor: pointer;
+    }
+}

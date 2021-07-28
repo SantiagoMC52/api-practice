@@ -5,7 +5,7 @@ const SearchBar = ({ placeholder, handleFilter }) => (
 
   <>
     <input
-      className="search-box"
+      className="searchbar__box"
       type="text"
       placeholder={placeholder}
       onChange={handleFilter}
