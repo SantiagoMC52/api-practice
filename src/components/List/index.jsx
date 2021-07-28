@@ -42,13 +42,12 @@ const List = () => {
 
   return (
     <>
-      <div>
+      <div className="searchbar-container">
         <SearchBar placeholder="Search..." handleFilter={handleFilter} />
       </div>
-      <section>
-        <div>
-          <ul>
-            {
+      <section className="list-container">
+        <ul>
+          {
               information.results?.filter((searched) => {
                 if (searchTerm === '') {
                   return searched;
@@ -66,15 +65,14 @@ const List = () => {
                 </>
               ))
             }
-          </ul>
-        </div>
-        <div className={classes.root}>
-          <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
-        </div>
-        <div>
-          <MainButtons />
-        </div>
+        </ul>
       </section>
+      <div className={classes.root} id="pagination-container">
+        <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
+      </div>
+      <div className="buttons-container">
+        <MainButtons />
+      </div>
     </>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import Navbar from '../Common/Navbar';
-import './dashboard.scss';
 
 const Dashboard = () => (
   <>
