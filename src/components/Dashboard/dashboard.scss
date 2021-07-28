@@ -1,0 +1,24 @@
+@import './../../styles/mixins.scss';
+@import './../../styles/variables.scss';
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bgColor;
+}
+
+.dashboard-title {
+    text-align: center;
+    font-family: $RMFont;
+    font-size: 50px;
+    color: #00B0C8;
+    margin: 40px 10px 10px 10px;
+    -webkit-text-stroke: 1px #000;
+    text-shadow: 2px 2px 5px yellow;
+}
