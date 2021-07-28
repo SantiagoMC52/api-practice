@@ -42,7 +42,7 @@ const List = () => {
   }
 
   return (
-    <>
+    <div>
       <div className="searchbar">
         <SearchBar placeholder="Search..." handleFilter={handleFilter} />
       </div>
@@ -74,7 +74,7 @@ const List = () => {
       <div className="buttons-container">
         <MainButtons />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -10,7 +10,9 @@
 }
 
 body {
+    @include flexbox(column, space-evenly, null, center);
     background-color: $bgColor;
+    height: 100vh;
 }
 
 .dashboard-title {
