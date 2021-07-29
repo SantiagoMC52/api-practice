@@ -2,7 +2,7 @@
 
 ## Steps to repodruce
 
-- Run ``npm install` command in api-practice folder and then `npm start` so you can go to http://localhost:3000 to view it in the browser.
+- Run `npm install` command in api-practice folder and then `npm start` so you can go to http://localhost:3000 to view it in the browser.
 
 ## Description
 
