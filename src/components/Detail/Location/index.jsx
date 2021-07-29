@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './location.scss';
 
 const Location = ({ data }) => (
-  <div>
+  <div className="location">
     <h2>
       Location name:
       {' '}

@@ -1,13 +1,12 @@
 @import './../../../styles/mixins.scss';
 @import './../../../styles/variables.scss';
 
-.character{
+.episode {
     @include card();
 }
 
 @media (min-width: 1360px) {
-
-    .character {
+    .episode {
         margin: 0 auto;
         width: 400px;
     }

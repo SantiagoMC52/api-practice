@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './episode.scss';
 
 const Episode = ({ data }) => (
-  <div>
+  <div className="episode">
     <h2>
       Episode name:
       {' '}
