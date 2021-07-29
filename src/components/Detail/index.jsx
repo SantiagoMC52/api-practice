@@ -38,7 +38,7 @@ const Detail = () => {
   return (
     <>
       {renderBasedOnSection(section)}
-      <div>
+      <div className="buttons-container">
         <MainButtons />
       </div>
     </>

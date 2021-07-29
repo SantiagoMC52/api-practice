@@ -1,0 +1,23 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+.character{
+    @include flexbox(column, space-evenly, center, null);
+    background-color: #0C2941;
+    border: 3px solid #EBF662;
+    border-radius: 2px;
+    box-shadow: 20px 20px 40px 0 rgb(192, 50, 150);
+    color: white;
+    font-size: 25px;
+    height: 500px;
+    text-align: center;
+    margin: 5px;
+}
+
+@media (min-width: 1360px) {
+
+    .character {
+        margin: 0 auto;
+        width: 400px;
+    }
+}

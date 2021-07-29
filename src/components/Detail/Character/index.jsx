@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './character.scss';
 
 const Character = ({ data }) => (
-  <div>
+  <div className="character">
     <h2>{data?.name}</h2>
     <img src={data?.image} alt={data?.name} />
     <p>
