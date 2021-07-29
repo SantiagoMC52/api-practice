@@ -1,0 +1,14 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+.character{
+    @include card();
+}
+
+@media (min-width: 1360px) {
+
+    .character {
+        margin: 0 auto;
+        width: 400px;
+    }
+}

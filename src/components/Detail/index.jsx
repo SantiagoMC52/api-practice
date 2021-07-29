@@ -5,7 +5,6 @@ import { getApiDetail } from '../../redux/actions/actionCreators';
 import Character from './Character';
 import Episode from './Episode';
 import Location from './Location';
-import Navbar from '../Common/Navbar';
 import MainButtons from '../Common/MainButtons';
 
 const Detail = () => {
@@ -38,9 +37,8 @@ const Detail = () => {
 
   return (
     <>
-      <Navbar />
       {renderBasedOnSection(section)}
-      <div>
+      <div className="buttons-container">
         <MainButtons />
       </div>
     </>

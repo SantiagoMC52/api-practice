@@ -9,6 +9,7 @@ import Pagination from '@material-ui/lab/Pagination';
 import { getApiData } from '../../redux/actions/actionCreators';
 import MainButtons from '../Common/MainButtons';
 import SearchBar from '../SearchBar';
+import './list.scss';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -41,14 +42,13 @@ const List = () => {
   }
 
   return (
-    <>
-      <div>
+    <div>
+      <div className="searchbar">
         <SearchBar placeholder="Search..." handleFilter={handleFilter} />
       </div>
-      <section>
-        <div>
-          <ul>
-            {
+      <section className="list-container">
+        <ul>
+          {
               information.results?.filter((searched) => {
                 if (searchTerm === '') {
                   return searched;
@@ -66,16 +66,15 @@ const List = () => {
                 </>
               ))
             }
-          </ul>
-        </div>
-        <div className={classes.root}>
-          <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
-        </div>
-        <div>
-          <MainButtons />
-        </div>
+        </ul>
       </section>
-    </>
+      <div className={classes.root} id="pagination-container">
+        <Pagination count={information.info?.pages} page={pagination} onChange={handlePagination} color="secondary" />
+      </div>
+      <div className="buttons-container">
+        <MainButtons />
+      </div>
+    </div>
   );
 };
 

@@ -3,13 +3,14 @@ import React from 'react';
 
 const SearchBar = ({ placeholder, handleFilter }) => (
 
-  <div>
+  <>
     <input
+      className="searchbar__box"
       type="text"
       placeholder={placeholder}
       onChange={handleFilter}
     />
-  </div>
+  </>
 
 );
 

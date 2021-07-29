@@ -1,0 +1,20 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+.navbar {
+    @include flexbox(column, center, center, null);
+    height: 80vh;
+
+    &__items {
+        @include flexbox(column, center, center, null);
+
+        a {
+            margin-bottom: 20px;
+            text-decoration: none;
+            font-size: 50px;
+            color: #000;
+            cursor: pointer;
+            font-family: $RMFont;
+        }
+    }
+}

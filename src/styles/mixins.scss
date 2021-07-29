@@ -1,0 +1,21 @@
+@mixin flexbox($direction, $justify, $items, $content) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $items;
+    align-content: $content;
+}
+
+@mixin card(){
+    @include flexbox(column, space-evenly, center, null);
+    background-color: #0C2941;
+    border: 3px solid #EBF662;
+    border-radius: 2px;
+    box-shadow: 20px 20px 40px 0 rgb(192, 50, 150);
+    color: white;
+    font-size: 25px;
+    min-height: 400px;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}

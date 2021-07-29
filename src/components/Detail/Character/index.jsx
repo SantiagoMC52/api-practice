@@ -1,14 +1,33 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import './character.scss';
 
 const Character = ({ data }) => (
-  <div>
+  <div className="character">
     <h2>{data?.name}</h2>
     <img src={data?.image} alt={data?.name} />
-    <p>{data?.status}</p>
-    <p>{data?.species}</p>
-    <p>{data.origin?.name}</p>
-    <p>{data.episode?.length}</p>
+    <p>
+      Status:
+      {' '}
+      {data?.status}
+    </p>
+    <p>
+      Specie:
+      {' '}
+      {data?.species}
+    </p>
+    <p>
+      Origin:
+      {' '}
+      {data.origin?.name}
+    </p>
+    <p>
+      Appeared in:
+      {' '}
+      {data.episode?.length}
+      {' '}
+      episodes
+    </p>
   </div>
 );
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import '../../List/list.scss';
 
 const MainButtons = () => {
   const history = useHistory();
@@ -7,9 +8,9 @@ const MainButtons = () => {
   return (
 
     <>
-      <button type="button" onClick={() => history.goBack()}>Back</button>
+      <button className="buttons-container__back" type="button" onClick={() => history.goBack()}>Back</button>
       <Link to="/">
-        <button type="button">Home</button>
+        <button className="buttons-container__home" type="button">Home</button>
       </Link>
     </>
   );

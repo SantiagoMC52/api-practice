@@ -1,0 +1,13 @@
+@import './../../../styles/mixins.scss';
+@import './../../../styles/variables.scss';
+
+.location{
+    @include card();
+}
+
+@media (min-width: 1360px) {
+    .location {
+        margin: 0 auto;
+        width: 400px;
+    }
+}
