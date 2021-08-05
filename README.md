@@ -16,7 +16,7 @@
 
 ## Search in list and character detail
 
-<img src="https://i.ibb.co/9q0jScz/search-character-rm.png" alt="search-character-rm" height="500px"> <img src="https://i.ibb.co/PctWqcB/character-detail-rm.png" alt="character-detail-rm" height="500px">
+<img src="https://i.ibb.co/9nJs53M/search-character-rm.png" alt="search-character-rm" height="500px"> <img src="https://i.ibb.co/PctWqcB/character-detail-rm.png" alt="character-detail-rm" height="500px">
 
 
 
