@@ -19,12 +19,12 @@ const Character = ({ data }) => (
     <p>
       Origin:
       {' '}
-      {data.origin?.name}
+      {data?.origin?.name}
     </p>
     <p>
       Appeared in:
       {' '}
-      {data.episode?.length}
+      {data?.episode?.length}
       {' '}
       episodes
     </p>

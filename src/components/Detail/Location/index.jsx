@@ -10,7 +10,7 @@ const Location = ({ data }) => (
       {data?.name}
     </h2>
     <p>
-      Tyep:
+      Type:
       {' '}
       {data?.type}
     </p>
