@@ -20,17 +20,17 @@ const Detail = () => {
   function renderBasedOnSection(param) {
     let component;
     switch (param) {
-      case 'character':
-        component = <Character data={dataDetails} />;
-        break;
-      case 'episode':
-        component = <Episode data={dataDetails} />;
-        break;
-      case 'location':
-        component = <Location data={dataDetails} />;
-        break;
-      default:
-        break;
+    case 'character':
+      component = <Character data={dataDetails} />;
+      break;
+    case 'episode':
+      component = <Episode data={dataDetails} />;
+      break;
+    case 'location':
+      component = <Location data={dataDetails} />;
+      break;
+    default:
+      break;
     }
     return component;
   }
