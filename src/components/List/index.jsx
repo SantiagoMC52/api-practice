@@ -49,23 +49,23 @@ const List = () => {
       <section className="list-container">
         <ul>
           {
-              information.results?.filter((searched) => {
-                if (searchTerm === '') {
-                  return searched;
-                }
-                if (searched.name.toLowerCase().includes(searchTerm.toLowerCase())) {
-                  return searched;
-                }
-              }).map((infoDetail) => (
-                <>
-                  <li key={infoDetail.name}>
-                    <h5>
-                      <Link to={`/${section}/${infoDetail?.id}`}>{infoDetail.name}</Link>
-                    </h5>
-                  </li>
-                </>
-              ))
-            }
+            information.results?.filter((searched) => {
+              if (searchTerm === '') {
+                return searched;
+              }
+              if (searched.name.toLowerCase().includes(searchTerm.toLowerCase())) {
+                return searched;
+              }
+            }).map((infoDetail) => (
+              <>
+                <li key={infoDetail.name}>
+                  <h5>
+                    <Link to={`/${section}/${infoDetail?.id}`}>{infoDetail.name}</Link>
+                  </h5>
+                </li>
+              </>
+            ))
+          }
         </ul>
       </section>
       <div className={classes.root} id="pagination-container">
