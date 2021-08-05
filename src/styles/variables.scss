@@ -3,5 +3,18 @@
     src: url('./../assets/get_schwifty.ttf')
 }
 
+@font-face {
+    font-family: 'HelveticaMedium';
+    src: url('./../assets/HelveticaNeue-Medium.ttf')
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url('./../assets/HelveticaNeue.ttf')
+}
+
 $RMFont: RickMortyFont;
+$helvetica-medium: HelveticaMedium;
+$helvetica-regular: HelveticaNeue;
+
 $bgColor: #00B0C8;
